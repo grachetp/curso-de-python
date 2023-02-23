@@ -57,20 +57,36 @@
 
 # print(funcao(1, 2, 3, 4, "Pedro", "João"))
 
-def func(*args, **kwargs): #*args passa desempacotado numa lista
-    # args = list(args)
-    # print(args)
-    # print(args[1])
-    # print(args[-1])
-    # for v in args:
-    #     print(v)
-    # print(kwargs['nome'])
-    idade = kwargs['idade'] #Pode gerar exceção se não existir
-    nome = kwargs.get('nome') 
-    print(nome)
+# def func(*args, **kwargs): #*args passa desempacotado numa lista
+#     # args = list(args)
+#     # print(args)
+#     # print(args[1])
+#     # print(args[-1])
+#     # for v in args:
+#     #     print(v)
+#     # print(kwargs['nome'])
+#     idade = kwargs['idade'] #Pode gerar exceção se não existir
+#     nome = kwargs.get('nome') 
+#     print(nome)
     
     
-lista = [1,2,3,4,5]
-#n1, n2, *n = lista
+# lista = [1,2,3,4,5]
+# #n1, n2, *n = lista
 
-func(*lista, nome="Pedro")
+# func(*lista, nome="Pedro")
+
+"Escopo de variáveis de funções"
+
+variavel = 'valor' #escopo global
+
+def func():
+    print(variavel)
+    
+def func2():
+    global variavel
+    variavel = 'Outro valor'
+    print(variavel)
+
+
+func()
+func2()

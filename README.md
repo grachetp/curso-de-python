@@ -399,3 +399,21 @@ lista = [1,2,3,4,5]
 
 func(*lista, nome="Pedro")
 ```
+## Escopo de variáveis de funções
+
+```python
+"Escopo de variáveis de funções"
+
+variavel = 'valor' #escopo global
+
+def func():
+    print(variavel)
+    
+def func2():
+    global variavel #Nesse caso, da para usar uma variável de escopo global dentro de um escopo menor
+    variavel = 'Outro valor'
+    print(variavel)
+
+func()
+func2()
+```
